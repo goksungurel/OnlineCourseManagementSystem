@@ -12,6 +12,7 @@ public class Main {
             System.out.println("3. Create Course");
             System.out.println("4. Enroll in Course");
             System.out.println("5. List Courses");
+            System.out.println("6. Assign Grade to Student");
             System.out.println("0. Exit");
             System.out.print("Select an option: ");
 
@@ -89,6 +90,35 @@ public class Main {
                 case 5:
                     system.listCourses();
                     break;
+                case 6:{
+                    System.out.println("Select student to give grade: ");
+                    for (int i = 0; i < system.getStudents().size(); i++) {
+                        System.out.println(i + ": " + system.getStudents().get(i).getName());
+                    }
+                    int studentIndex = sc.nextInt();
+                    sc.nextLine();
+                    Student student = system.getStudents().get(studentIndex);
+
+                    System.out.println("Select course (index): ");
+                    for (int i = 0; i < system.getCourses().size(); i++) {
+                        System.out.println(i + ": " + system.getCourses().get(i).getTitle());
+                    }
+                    int courseIndex = sc.nextInt();
+                    sc.nextLine();
+                    Course course = system.getCourses().get(courseIndex);
+
+                    System.out.println("Enter grade: ");
+                    int grade = sc.nextInt();
+                    sc.nextLine();
+
+                    course.setGrade(student, grade);
+                    System.out.println("Grade set. " + student.getName() + " - " + grade);
+                    if (course.isCompleted(student)) {
+                        System.out.println("🎉 " + student.getName() + " has completed the course! 🎓");
+                    }
+                    break;
+
+                }
                 case 0:
                     System.out.println("Goodbye!");
                     break;
