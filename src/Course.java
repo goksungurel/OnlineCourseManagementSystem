@@ -34,5 +34,11 @@ public class Course {
     }
     public void setEnrolledStudents(ArrayList<Student> enrolledStudents) {
         this.enrolledStudents = enrolledStudents;
+
+    }
+    public String toString() {
+        return "Course: " + title + ", Instructor: " + instructor.getName();
+
     }
 }
+

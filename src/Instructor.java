@@ -16,6 +16,8 @@ public class Instructor extends  User{
 
     public void createCourse(Course course){
         coursesTaught.add(course);
+        System.out.println(getName() + " has created a new course: " + course.getTitle());
+
     }
 
     public ArrayList<Course> getCoursesTaught(){

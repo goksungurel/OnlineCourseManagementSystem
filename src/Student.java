@@ -22,6 +22,7 @@ public class Student extends User {
     public void enrollCourse(Course course) {
         enrolledCourses.add(course);
         course.getEnrolledStudents().add(this);
+        System.out.println(getName() + " has successfully enrolled in the course: " + course.getTitle());
     }
 }
 
