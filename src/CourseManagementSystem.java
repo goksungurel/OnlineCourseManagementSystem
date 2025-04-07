@@ -6,24 +6,48 @@ public class CourseManagementSystem {
     private ArrayList<Course> courses;
 
     public CourseManagementSystem() {
-        instructors = new ArrayList<>();
-        students = new ArrayList<>();
-        courses = new ArrayList<>();
+        setInstructors(new ArrayList<>());
+        setStudents(new ArrayList<>());
+        setCourses(new ArrayList<>());
     }
     public void addInstructor(Instructor instructor) {
-        instructors.add(instructor);
+        getInstructors().add(instructor);
     }
     public void addStudent(Student student) {
-        students.add(student);
+        getStudents().add(student);
     }
     public void addCourse(Course course) {
-        courses.add(course);
+        getCourses().add(course);
     }
     public void listCourses(){
         System.out.println("Courses List");
-        for(Course c : courses){
+        for(Course c : getCourses()){
             System.out.println(c);
         }
     }
 
+
+    public ArrayList<Instructor> getInstructors() {
+        return instructors;
+    }
+
+    public void setInstructors(ArrayList<Instructor> instructors) {
+        this.instructors = instructors;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(ArrayList<Course> courses) {
+        this.courses = courses;
+    }
 }
