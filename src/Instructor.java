@@ -1,9 +1,13 @@
 package src;
+
+import java.util.ArrayList;
+
 public class Instructor extends  User{
-    private Course[] coursesTaught;
-    public Instructor(String name,String email,Course[] coursesTaught){
+    private ArrayList<Course>coursesTaught;
+    public Instructor(String name,String email){
         super(name,email);
-        this.coursesTaught = coursesTaught;
+
+        coursesTaught = new ArrayList<Course>();
     }
     public void login(){
         System.out.println("Instructor Login");
@@ -11,15 +15,16 @@ public class Instructor extends  User{
     }
 
     public void createCourse(Course course){
+        coursesTaught.add(course);
     }
 
-    public Course[] getCoursesTaught() {
+    public ArrayList<Course> getCoursesTaught(){
         return coursesTaught;
     }
-
-    public void setCoursesTaught(Course[] coursesTaught) {
+    public void setCoursesTaught(ArrayList<Course> coursesTaught){
         this.coursesTaught = coursesTaught;
     }
+
 }
 
 

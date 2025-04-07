@@ -1,24 +1,28 @@
 package src;
-
+import java.util.ArrayList;
 public class Student extends User {
-    private Course[] enrolledCourse;
-    public Student(String name,String email,Course[] enrolledCourse) {
-        super(name,email);
-        this.setEnrolledCourse(enrolledCourse);
+    private ArrayList<Course> enrolledCourses;
+
+    public Student(String name, String email) {
+        super(name, email);
+        enrolledCourses = new ArrayList<>();
     }
-    public void login(){
+    public ArrayList<Course> getEnrolledCourses() {
+        return enrolledCourses;
+    }
+   public void setEnrolledCourses(ArrayList<Course> enrolledCourses) {
+        this.enrolledCourses = enrolledCourses;
+   }
+
+    public void login() {
         System.out.println("Student Login");
 
     }
-    public void createCourse(Course course){
 
-    }
-
-    public Course[] getEnrolledCourse() {
-        return enrolledCourse;
-    }
-
-    public void setEnrolledCourse(Course[] enrolledCourse) {
-        this.enrolledCourse = enrolledCourse;
+    public void enrollCourse(Course course) {
+        enrolledCourses.add(course);
+        course.getEnrolledStudents().add(this);
     }
 }
+
+

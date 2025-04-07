@@ -1,14 +1,16 @@
 package src;
 
+import java.util.ArrayList;
+
 public class Course {
     private String title;
     private Instructor instructor;
-    private Student[] enrolledStudents;
+    private ArrayList<Student> enrolledStudents;
 
-    public Course(String title, Instructor instructor, Student[] enrolledStudents) {
+    public Course(String title, Instructor instructor) {
         this.setTitle(title);
         this.setInstructor(instructor);
-        this.setEnrolledStudents(enrolledStudents);
+        enrolledStudents=new ArrayList<>();
     }
 
     public String getTitle() {
@@ -27,11 +29,10 @@ public class Course {
         this.instructor = instructor;
     }
 
-    public Student[] getEnrolledStudents() {
+    public ArrayList<Student> getEnrolledStudents() {
         return enrolledStudents;
     }
-
-    public void setEnrolledStudents(Student[] enrolledStudents) {
+    public void setEnrolledStudents(ArrayList<Student> enrolledStudents) {
         this.enrolledStudents = enrolledStudents;
     }
 }
